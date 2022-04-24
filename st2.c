@@ -17,19 +17,19 @@ int main()
     printf("Enter the feet : ");
     scanf("%d", &d1.ft);
     printf("Enter the inch: ");
-    scanf("%f", &d1.inch);
+    scanf("%d", &d1.inch);
 
     printf("Enter 2nd Distance :-");
 
     printf("Enter the feet : ");
     scanf("%d", &d2.ft);
     printf("Enter the inch: ");
-    scanf("%f", &d2.inch);
+    scanf("%d", &d2.inch);
 
     add.ft = d1.ft + d2.ft;
     add.inch = d1.inch + d2.inch;
 
-    printf(" Sum : %d feet %d inch", add.ft, add.inch);     //Error on printing inch
+    printf(" Sum : %d feet %d inch", add.ft, add.inch); 
 
     return 0;
 }
