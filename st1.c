@@ -17,15 +17,15 @@ int main()      //Error while scanning id n dept
     st studinfo;
     printf(" Enter student information :-");
     printf("\n Name : ");
-    scanf(" %s ", studinfo.name);
+    scanf(" %s ", &studinfo.name);
     printf("\n Id : ");
-    scanf(" %d ", studinfo.id);
+    scanf(" %d ", &studinfo.id);
     printf("\n Department : ");
-    scanf(" %s ", studinfo.dept);
+    scanf(" %s ", &studinfo.dept);
     printf("\n Section : ");
-    scanf(" %s ", studinfo.sec);
+    scanf(" %s ", &studinfo.sec);
     printf("\n CGPA : ");
-    scanf(" %f ", studinfo.cgpa);
+    scanf(" %f ", &studinfo.cgpa);
 
     printf(" Student information :-");
     printf(" Name : %s ", studinfo.name);
