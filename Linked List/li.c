@@ -1,49 +1,30 @@
-// Program to create my firs linked list
+#include "li.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct st
+Node *create_node(int value)
 {
-    int data;
-    struct st *next;
-} node;
+    Node *temp;
 
-node *create_node(int value)
-{
-    node *temp;
-
-    temp = (node *)malloc(sizeof(node));
+    temp = (Node *)malloc(sizeof(Node));
     temp->data = value;
     temp->next = NULL;
 
     return temp;
 }
 
-void append(node *head, int value)
+void append(Node **head, int value)
 {
-    node *temp;
+    Node *temp = create_node(value);
+    Node *current = *head;
 
-    temp = create_node(value);
-
-    if (head == NULL)
-        head = temp;
-
-    if (head->next == NULL)
+    if (*head == NULL)
     {
-        head->next = temp;
+        *head = temp;
     }
 
-    if (head->next->next == NULL)
+    while (current->next != NULL)
     {
-        head->next->next = temp;
+        current = current->next;
     }
-}
 
-int main()
-{
-    node *head = NULL;
-
-    append(head, 5);
-    return 0;
+    current->next = temp;
 }
