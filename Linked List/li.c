@@ -30,6 +30,18 @@ void append(Node **head, int value)
     current->next = temp;
 }
 
+
+void delete(Node* delhead, int deln)
+{
+    deln--;
+        while(deln-->1)
+        {
+            delhead = delhead->next;
+        }
+
+        delhead->next=delhead->next->next;
+}
+
 void traverse(Node* pthead)
 {
     while (pthead != NULL)
