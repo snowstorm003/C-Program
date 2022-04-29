@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct st
 {
@@ -6,6 +7,6 @@ typedef struct st
     struct st *next;
 } Node;
 
-Node *create_node(int value);
-void append(Node **head, int value);
-void traverse(Node *head)
+Node *create_node(int value);  //to create a new node
+void append(Node **head, int value);  //to add the newly created node
+void traverse(Node *head);  //to move across the linked list
