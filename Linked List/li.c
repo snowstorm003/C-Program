@@ -30,24 +30,37 @@ void append(Node **head, int value)
     current->next = temp;
 }
 
-
-void delete(Node* delhead, int deln)
+void delete (Node *delhead, int n)
 {
-    deln--;
-        while(deln-->1)
-        {
-            delhead = delhead->next;
-        }
+    n--;
+    while (n-- > 1)
+    {
+        delhead = delhead->next;
+    }
 
-        delhead->next=delhead->next->next;
+    delhead->next = delhead->next->next;
 }
 
-void traverse(Node* pthead)
+// void add(Node *addhead, int n, int value)
+// {
+//     Node *temp = create_node(value);
+
+//     n--;
+//     while(n-- > 1)
+//     {
+//         addhead = addhead->next;
+//     }
+
+//     Node *temp2 = addhead;
+//     addhead->next = temp;
+//     temp->next = temp2->next;
+// }
+
+void traverse(Node *pthead)
 {
     while (pthead != NULL)
     {
         printf("%d ", pthead->data);
-        pthead=pthead->next;
+        pthead = pthead->next;
     }
-    
 }

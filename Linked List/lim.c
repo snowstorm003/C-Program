@@ -17,7 +17,9 @@ int main()
 
     traverse(head);
 
-    
+    add(head, 3, 65);
+
+    traverse(head);
     //fucntion to add a node before nth position
     //function to add a node after nth position
     //function to add a node at nth position
