@@ -41,20 +41,20 @@ void delete (Node *delhead, int n)
     delhead->next = delhead->next->next;
 }
 
-// void add(Node *addhead, int n, int value)
-// {
-//     Node *temp = create_node(value);
+void add(Node *addhead, int n, int value)
+{
+    Node *temp = create_node(value);
 
-//     n--;
-//     while(n-- > 1)
-//     {
-//         addhead = addhead->next;
-//     }
+    n--;
+    while(n-- > 1)
+    {
+        addhead = addhead->next;
+    }
 
-//     Node *temp2 = addhead;
-//     addhead->next = temp;
-//     temp->next = temp2->next;
-// }
+    Node *temp2 = addhead->next;
+    addhead->next = temp;
+    temp->next = temp2->next;
+}
 
 void traverse(Node *pthead)
 {
