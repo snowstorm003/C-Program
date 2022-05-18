@@ -4,9 +4,9 @@ int main()
 {
     Node *head = NULL, *tail = NULL;
     Node *pos;
-    int ch, value, position;
+    int ch, value, position, flag = 1;
 
-    while (1)
+    while (flag == 1)
     {
         printf("*********MENU***********\n");
         printf("1: To add node at the end.\n");
@@ -17,7 +17,9 @@ int main()
         printf("6: To delete the first node.\n");
         printf("7: To add in between after.\n");
         printf("8: To add in between before.\n");
-        printf("9: To EXIT.\n\n");
+        printf("9: To delete in between after.\n");
+        printf("10: To delete in between before.\n");
+        printf("11: To EXIT.\n\n");
 
         printf("Enter your choice :\n");
         scanf("%d", &ch);
@@ -28,23 +30,29 @@ int main()
             printf("Enter the value to be inserted at the end : ");
             scanf("%d", &value);
             add_end(&head, &tail, value);
+            flag = 1;
             break;
         case 2:
             printf("Enter the value to be inserted at the beginning : ");
             scanf("%d", &value);
             add_begin(&head, &tail, value);
+            flag = 1;
             break;
         case 3:
             traverse_next(head);
+            flag = 1;
             break;
         case 4:
             traverse_prev(tail);
+            flag = 1;
             break;
         case 5:
             delete_end(&tail);
+            flag = 1;
             break;
         case 6:
             delete_begin(&head);
+            flag = 1;
             break;
         case 7:
             printf("Enter position : ");
@@ -53,6 +61,8 @@ int main()
             scanf("%d", &value);
             pos = search_pos(head, position);
             add_in_between_after(pos, value);
+
+            flag = 1;
             break;
         case 8:
             printf("Enter position : ");
@@ -61,9 +71,29 @@ int main()
             scanf("%d", &value);
             pos = search_pos(head, position);
             add_in_between_before(pos, value);
+
+            flag = 1;
             break;
         case 9:
-            return 0;
+            printf("Enter position : ");
+            scanf("%d", &position);
+            pos = search_pos(head, position);
+            delete_in_between_after(pos);
+
+            flag = 1;
+            break;
+        case 10:
+            printf("Enter position : ");
+            scanf("%d", &position);
+            pos = search_pos(head, position);
+            delete_in_between_before(pos);
+            traverse_next(head);
+
+            flag = 1;
+            break;
+        case 11:
+            flag = 0;
+            break;
         default:
             printf("Enter the correct choice.\n");
         }

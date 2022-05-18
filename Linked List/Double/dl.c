@@ -130,6 +130,26 @@ Node *search_pos(Node *head, int position)
     return head;
 }
 
+// Node* search_pos(Node* head, int n)
+// {
+//     int i = 1;
+
+//     if(head == NULL)
+//         return NULL;
+
+//     while(n>0 && head != NULL)
+//     {
+//         if(i == n-1)
+//             return head;
+//         else
+//         {
+//             head = head->next;
+//             i++;
+//         }
+//     }
+
+// }
+
 void add_in_between_after(Node *pos, int value)
 {
     Node *temp;
@@ -139,15 +159,43 @@ void add_in_between_after(Node *pos, int value)
     temp->next = pos->next;
     pos->next->prev = temp;
     pos->next = temp;
+
+    return;
 }
 
 void add_in_between_before(Node *pos, int value)
 {
     Node *temp;
-    temp=create_node(value);
+    temp = create_node(value);
 
-    temp->prev=pos->prev;
-    temp->next=pos;
-    pos->prev=temp;
-    pos->prev->next=temp;
+    temp->prev = pos->prev;
+    temp->next = pos;
+    pos->prev = temp;
+    pos->prev->next = temp;
+}
+
+void delete_in_between_after(Node *pos)
+{
+    Node *temp = pos;
+
+    if (pos->next->next == NULL)
+    {
+        printf("Invalid Position\n");
+        return;
+    }
+
+    pos->next = pos->next->next;
+    pos->next->prev = pos;
+
+    free(temp);
+}
+
+void delete_in_between_before(Node *pos)
+{
+    Node *temp = pos;
+
+    pos->prev->next = pos->next;
+    pos->next->prev = pos->prev;
+
+    free(temp);
 }
