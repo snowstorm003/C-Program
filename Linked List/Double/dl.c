@@ -140,3 +140,14 @@ void add_in_between_after(Node *pos, int value)
     pos->next->prev = temp;
     pos->next = temp;
 }
+
+void add_in_between_before(Node *pos, int value)
+{
+    Node *temp;
+    temp=create_node(value);
+
+    temp->prev=pos->prev;
+    temp->next=pos;
+    pos->prev=temp;
+    pos->prev->next=temp;
+}

@@ -17,3 +17,4 @@ void delete_end(Node **tail);
 void delete_begin(Node **head);
 Node *search_pos(Node *head, int position);
 void add_in_between_after(Node *pos, int value);
+void add_in_between_before(Node *pos, int value);

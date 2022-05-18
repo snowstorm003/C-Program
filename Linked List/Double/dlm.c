@@ -16,7 +16,8 @@ int main()
         printf("5: To delete the last node.\n");
         printf("6: To delete the first node.\n");
         printf("7: To add in between after.\n");
-        printf("8: To EXIT.\n\n");
+        printf("8: To add in between before.\n");
+        printf("9: To EXIT.\n\n");
 
         printf("Enter your choice :\n");
         scanf("%d", &ch);
@@ -46,7 +47,7 @@ int main()
             delete_begin(&head);
             break;
         case 7:
-            printf("Enter position for new node : ");
+            printf("Enter position : ");
             scanf("%d", &position);
             printf("Enter value for new node : ");
             scanf("%d", &value);
@@ -54,6 +55,14 @@ int main()
             add_in_between_after(pos, value);
             break;
         case 8:
+            printf("Enter position : ");
+            scanf("%d", &position);
+            printf("Enter value for new node : ");
+            scanf("%d", &value);
+            pos = search_pos(head, position);
+            add_in_between_before(pos, value);
+            break;
+        case 9:
             return 0;
         default:
             printf("Enter the correct choice.\n");
