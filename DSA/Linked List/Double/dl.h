@@ -20,3 +20,4 @@ void add_in_between_after(Node *pos, int value);
 void add_in_between_before(Node *pos, int value);
 void delete_in_between_after(Node *pos);
 void delete_in_between_before(Node *pos);
+void delete_in_between_at(Node *pos);

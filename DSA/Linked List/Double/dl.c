@@ -213,3 +213,24 @@ void delete_in_between_before(Node *pos)
 
     free(temp);
 }
+
+void delete_in_between_at(Node *pos)
+{
+    Node *temp;
+
+    if (pos->prev == NULL)
+    {
+        printf("Wrong choice\n");
+        return;
+    }
+    if (pos->next == NULL)
+    {
+        printf("Wrong choice\n");
+        return;
+    }
+
+    temp = pos;
+
+    pos->prev->next = pos->next;
+    pos->next->prev = pos->prev;
+}

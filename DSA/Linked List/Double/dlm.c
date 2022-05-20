@@ -19,7 +19,8 @@ int main()
         printf("8: To add in between before.\n");
         printf("9: To delete in between after.\n");
         printf("10: To delete in between before.\n");
-        printf("11: To EXIT.\n\n");
+        printf("11: To delete in between at.\n");
+        printf("12: To EXIT.\n\n");
 
         printf("Enter your choice :\n");
         scanf("%d", &ch);
@@ -77,6 +78,12 @@ int main()
             delete_in_between_before(pos);
             break;
         case 11:
+            printf("Enter position : ");
+            scanf("%d", &position);
+            pos = search_pos(head, position);
+            delete_in_between_at(pos);
+            break;
+        case 12:
             flag = 0;
             break;
         default:
