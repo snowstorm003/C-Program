@@ -99,6 +99,7 @@ void delete_begin(Node **head)
 Node *search_pos(Node *head, int position)
 {
     int i, count = 1;
+    Node *temp = head;
 
     if (head == NULL)
     {
@@ -123,36 +124,23 @@ Node *search_pos(Node *head, int position)
         printf("Wrong Input\n");
         return NULL;
     }
-
+    head = temp;
     for (i = 1; i < position; i++)
         head = head->next;
 
     return head;
 }
 
-// Node* search_pos(Node* head, int n)
-// {
-//     int i = 1;
-
-//     if(head == NULL)
-//         return NULL;
-
-//     while(n>0 && head != NULL)
-//     {
-//         if(i == n-1)
-//             return head;
-//         else
-//         {
-//             head = head->next;
-//             i++;
-//         }
-//     }
-
-// }
-
 void add_in_between_after(Node *pos, int value)
 {
     Node *temp;
+
+    if (pos->next == NULL)
+    {
+        printf("Wrong choice\n");
+        return;
+    }
+
     temp = create_node(value);
 
     temp->prev = pos;
@@ -166,23 +154,36 @@ void add_in_between_after(Node *pos, int value)
 void add_in_between_before(Node *pos, int value)
 {
     Node *temp;
+
+    if (pos->prev == NULL)
+    {
+        printf("Wrong choice\n");
+        return;
+    }
     temp = create_node(value);
 
     temp->prev = pos->prev;
     temp->next = pos;
-    pos->prev = temp;
     pos->prev->next = temp;
+    pos->prev = temp;
 }
 
 void delete_in_between_after(Node *pos)
 {
-    Node *temp = pos;
+    Node *temp;
 
     if (pos->next->next == NULL)
     {
-        printf("Invalid Position\n");
+        printf("Wrong choice\n");
         return;
     }
+    if (pos->next == NULL)
+    {
+        printf("Wrong choice\n");
+        return;
+    }
+
+    temp = pos;
 
     pos->next = pos->next->next;
     pos->next->prev = pos;
@@ -192,10 +193,23 @@ void delete_in_between_after(Node *pos)
 
 void delete_in_between_before(Node *pos)
 {
-    Node *temp = pos;
+    Node *temp;
 
-    pos->prev->next = pos->next;
-    pos->next->prev = pos->prev;
+    if (pos->prev->prev == NULL)
+    {
+        printf("Wrong choice\n");
+        return;
+    }
+    if (pos->prev == NULL)
+    {
+        printf("Wrong choice\n");
+        return;
+    }
+
+    temp = pos;
+
+    pos->prev->prev->next = pos;
+    pos->prev = pos->prev->prev;
 
     free(temp);
 }

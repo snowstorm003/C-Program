@@ -30,29 +30,23 @@ int main()
             printf("Enter the value to be inserted at the end : ");
             scanf("%d", &value);
             add_end(&head, &tail, value);
-            flag = 1;
             break;
         case 2:
             printf("Enter the value to be inserted at the beginning : ");
             scanf("%d", &value);
             add_begin(&head, &tail, value);
-            flag = 1;
             break;
         case 3:
             traverse_next(head);
-            flag = 1;
             break;
         case 4:
             traverse_prev(tail);
-            flag = 1;
             break;
         case 5:
             delete_end(&tail);
-            flag = 1;
             break;
         case 6:
             delete_begin(&head);
-            flag = 1;
             break;
         case 7:
             printf("Enter position : ");
@@ -61,8 +55,6 @@ int main()
             scanf("%d", &value);
             pos = search_pos(head, position);
             add_in_between_after(pos, value);
-
-            flag = 1;
             break;
         case 8:
             printf("Enter position : ");
@@ -71,25 +63,18 @@ int main()
             scanf("%d", &value);
             pos = search_pos(head, position);
             add_in_between_before(pos, value);
-
-            flag = 1;
             break;
         case 9:
             printf("Enter position : ");
             scanf("%d", &position);
             pos = search_pos(head, position);
             delete_in_between_after(pos);
-
-            flag = 1;
             break;
         case 10:
             printf("Enter position : ");
             scanf("%d", &position);
             pos = search_pos(head, position);
             delete_in_between_before(pos);
-            traverse_next(head);
-
-            flag = 1;
             break;
         case 11:
             flag = 0;
