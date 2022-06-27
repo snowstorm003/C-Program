@@ -1,0 +1,30 @@
+5. A music player reads the track names from a text file, create a playlist. It can play from
+the first track and as well as from any specified track. It can also repeat the tracks. It will
+change the track after getting suitable input from the user only. It allows the user to add a
+specific track after or before an existing track. First track will be played if 'N' is pressed
+after the last track. The user guide for this player is given below:
+
+S: start the player
+
+J: Jump to a specific track
+
+N: next track
+
+P: previous track
+
+F: first track
+
+L: last track
+
+A: add a track after an existing track
+B: add a track before an existing track
+R: remove a specific track from the list
+O: sort the tracks in alphabetical order
+
+T: stop the player
+
+C: change the track position
+
+D: display all tracks, Add a * besides the current track
+Write a program to simulate the above specified music player.
+
